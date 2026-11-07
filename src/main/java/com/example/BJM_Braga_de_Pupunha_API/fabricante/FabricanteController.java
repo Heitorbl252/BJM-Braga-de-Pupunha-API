@@ -9,12 +9,17 @@ public class FabricanteController {
     private FabricanteService fabricanteService;
 
     @PostMapping
-    public Fabricante postFabricante(Fabricante f){
+    public Fabricante postFabricante(@RequestBody Fabricante f){
         return this.fabricanteService.criarFabricante(f);
     }
 
     @GetMapping
     public List<Fabricante> listarAlunos(){
         return this.fabricanteService.listarFabricantes();
+    }
+
+    @PutMapping("/{id}")
+    public Fabricante atualizarFabricante(@PathVariable("id") Long id, @RequestBody Fabricante f){
+        return this.fabricanteService.atualizarFabricante(id, f);
     }
 }

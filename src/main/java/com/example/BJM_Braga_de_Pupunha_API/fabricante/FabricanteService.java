@@ -14,4 +14,13 @@ public class FabricanteService {
     public List<Fabricante> listarFabricantes() {
         return this.fabricanteRepository.findAll();
     }
+
+    public Fabricante atualizarFabricante(Long id, Fabricante f) {
+        boolean hasFabricante = this.fabricanteRepository.findById(id).isPresent();
+        if(hasFabricante){
+            Fabricante fabricante = this.fabricanteRepository.findById(id).get();
+        } else {
+            return null;
+        }
+    }
 }
