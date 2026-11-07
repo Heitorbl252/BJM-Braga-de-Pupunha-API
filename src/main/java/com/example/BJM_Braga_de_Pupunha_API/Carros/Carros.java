@@ -14,9 +14,9 @@ public class Carros {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
-    private String nome;
-    private String modelo;
-    private int ano;
+    public String nome;
+    public String modelo;
+    public int ano;
     private LocalDateTime dataFabricacao;
 
     public Carros(String nome, String modelo, int ano, LocalDateTime dataFabricacao) {
